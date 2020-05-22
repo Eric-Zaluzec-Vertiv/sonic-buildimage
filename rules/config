@@ -10,7 +10,7 @@
 # SONIC_CONFIG_BUILD_JOBS - set number of jobs for parallel build.
 # Corresponding -j argument will be passed to make command inside docker
 # container.
-SONIC_CONFIG_BUILD_JOBS = 1
+SONIC_CONFIG_BUILD_JOBS = 8
 
 # SONIC_CONFIG_MAKE_JOBS - set number of parallel make jobs per package.
 # Corresponding -j argument will be passed to make/dpkg commands that build separate packages
@@ -18,7 +18,7 @@ SONIC_CONFIG_MAKE_JOBS = $(shell nproc)
 
 # DEFAULT_BUILD_LOG_TIMESTAMP - add timestamp in build log
 # Supported format: simple, none
-DEFAULT_BUILD_LOG_TIMESTAMP = none
+DEFAULT_BUILD_LOG_TIMESTAMP = simple
 
 # SONIC_USE_DOCKER_BUILDKIT - use docker buildkit for build.
 # If set to y SONiC build system will set environment variable DOCKER_BUILDKIT=1
@@ -34,7 +34,7 @@ DEFAULT_BUILD_LOG_TIMESTAMP = none
 
 # SONIC_CONFIG_ENABLE_COLORS - enable colored output in build system.
 # Comment next line to disable:
-# SONIC_CONFIG_ENABLE_COLORS = y
+SONIC_CONFIG_ENABLE_COLORS = y
 
 # DEFAULT_USERNAME - default username for installer build
 DEFAULT_USERNAME = admin
