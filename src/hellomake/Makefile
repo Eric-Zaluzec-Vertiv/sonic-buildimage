@@ -22,7 +22,7 @@ $(addprefix $(DEST)/, $(MAIN_TARGET)): $(DEST)/% :
 	#dpkg-buildpackage -rfakeroot -b -us -uc -j$(SONIC_CONFIG_MAKE_JOBS)
 	dpkg-deb --nocheck --root-owner-group --build hellomake_$(CONFIGURED_ARCH) 
 
-	mv $(DERIVED_TARGETS) $* $(DEST)/
+	mv $(DERIVED_TARGETS) $(DEST)/
 	popd
 	
 $(addprefix $(DEST)/, $(DERIVED_TARGETS)): $(DEST)/% : $(DEST)/$(MAIN_TARGET)
