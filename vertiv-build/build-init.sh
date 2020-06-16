@@ -1,6 +1,8 @@
 #!/bin/bash
 
 sudo modprobe overlay
+./generate-recipes.sh
+
 cd ../.
 start=`date +%s`
 make init
